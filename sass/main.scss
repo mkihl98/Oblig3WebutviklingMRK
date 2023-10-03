@@ -1,3 +1,20 @@
 body{
     background-color: rgb(181, 181, 190);
+
+    header{
+
+        nav{
+
+            span{
+                display: inline-block;
+            }
+
+            ul{
+
+                li{
+                    display: inline-block;
+                }
+            }
+        }
+    }
 }

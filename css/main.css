@@ -1,3 +1,9 @@
 body {
   background-color: rgb(181, 181, 190);
+}
+body header nav span {
+  display: inline-block;
+}
+body header nav ul li {
+  display: inline-block;
 }/*# sourceMappingURL=main.css.map */
