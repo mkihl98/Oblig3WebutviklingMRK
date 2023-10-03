@@ -1,9 +1,27 @@
-body {
-  background-color: rgb(181, 181, 190);
+* {
+  box-sizing: border-box;
 }
-body header nav span {
-  display: inline-block;
+
+body {
+  background-color: #eae6e6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body a {
+  text-decoration: none;
+  color: #000;
+}
+body header {
+  padding: 1rem;
+  text-decoration: none;
+}
+body header nav ul {
+  padding: 0;
+  margin: 0;
+  float: right;
 }
 body header nav ul li {
   display: inline-block;
+}
+body section #video {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
