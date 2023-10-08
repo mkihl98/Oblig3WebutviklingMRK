@@ -24,6 +24,16 @@ body{
                 li{
                     display: inline-block;
                 }
+
+                #hamburger{
+                    ul{
+                        display: none;
+
+                        li{
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }

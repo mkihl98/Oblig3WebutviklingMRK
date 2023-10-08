@@ -22,6 +22,12 @@ body header nav ul {
 body header nav ul li {
   display: inline-block;
 }
+body header nav ul #hamburger ul {
+  display: none;
+}
+body header nav ul #hamburger ul li {
+  display: block;
+}
 body section #video {
   width: 100%;
 }/*# sourceMappingURL=main.css.map */
