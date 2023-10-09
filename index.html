@@ -8,13 +8,13 @@
     </head>
     <body>
         <header>
+            <span>
+                <a href="index.html">LOGO</a>
+            </span>
             <nav>
-                <span>
-                    <a href="index.html">LOGO</a>
-                </span>
                 <ul>
-                    <li><a href="#">Søkeikon</a></li>
-                    <li id="hamburger"><a href="#" onclick="navigasjon()">Hamburgermeny</a>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
+                    <li id="hamburger"><a href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
                         <ul id="menypunkter">
                             <li>Hjem</li>
                             <li>Kategori 1</li>
@@ -27,10 +27,16 @@
             </nav>
         </header>
         <main>
-            <section>
+            <section id="videosnutt">
                 <article>
-                    <img id="video" src="img/jogging-person.jpg" alt="Person som løper med joggesko på beina" />
-                    <p>Bildet er tatt av <a href="https://pixabay.com/no/users/kinkate-4384506/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2343558">kinkate</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2343558">Pixabay</a></p>
+                    <video id="video" autoplay muted loop> <!--Kilde for videotag (i tillegg til Webtricks LMS for kurset):  -->
+                        <source src="video/woman-shoe.mp4" type="video/mp4">
+                        Your browser does not support the embedded video.
+                    </video>
+                    <p>
+                        Stock footage provided by <a class="link author-link-popup" target="_blank" href="https://www.videvo.net/author/vidfy-Freepik/#rs=attribution-modal">Freepik</a>,
+                        downloaded from <a class="videvo-redirect" target="_blank" href="https://www.videvo.net/#rs=attribution-modal">videvo.net</a>
+                    </p>
                 </article>
             </section>
             <section>
@@ -58,6 +64,7 @@
         <footer>
             <p>Designet av Martine Resberg Kihl</p>
         </footer>
+        <script src="https://kit.fontawesome.com/1a5507b8d7.js" crossorigin="anonymous"></script>
         <script>
             function navigasjon() {
                 let menyPunkter = document.getElementById("menypunkter")

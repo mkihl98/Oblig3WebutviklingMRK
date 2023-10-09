@@ -6,28 +6,44 @@ body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
 }
-body a {
+body header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body header span a {
   text-decoration: none;
+  font-size: 2rem;
+  font-weight: 800;
   color: #000;
 }
-body header {
-  padding: 1rem;
-  text-decoration: none;
-}
 body header nav ul {
-  padding: 0;
-  margin: 0;
-  float: right;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  color: #000;
 }
-body header nav ul li {
-  display: inline-block;
-}
-body header nav ul #hamburger ul {
+body header nav ul #menypunkter {
   display: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 1rem 0;
 }
-body header nav ul #hamburger ul li {
-  display: block;
-}
-body section #video {
+body main section article #video {
   width: 100%;
+  max-width: 700px;
+}
+@media only screen and (min-width: 600px) {
+  body main section article #video {
+    float: right;
+  }
+}
+body main section article p {
+  font-size: 0.7rem;
+}
+@media only screen and (min-width: 600px) {
+  body main section article p {
+    float: right;
+  }
 }/*# sourceMappingURL=main.css.map */

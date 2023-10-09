@@ -8,13 +8,21 @@
     </head>
     <body>
         <header>
+            <span>
+                <a href="index.html">LOGO</a>
+            </span>
             <nav>
-                <span>
-                    <a href="index.html">LOGO</a>
-                </span>
                 <ul>
-                    <li><a href="#">Søkeikon</a></li>
-                    <li><a href="#">Hamburgermeny</a></li>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
+                    <li id="hamburger"><a href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
+                        <ul id="menypunkter">
+                            <li>Hjem</li>
+                            <li>Kategori 1</li>
+                            <li>Kategori 2</li>
+                            <li>Kategori 3</li>
+                            <li>Min side</li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -24,5 +32,16 @@
         <footer>
             
         </footer>
+        <script src="https://kit.fontawesome.com/1a5507b8d7.js" crossorigin="anonymous"></script>
+        <script>
+            function navigasjon() {
+                let menyPunkter = document.getElementById("menypunkter")
+                if(menyPunkter.style.display === "block") {
+                    menyPunkter.style.display = "none"
+                } else {
+                    menyPunkter.style.display = "block"
+                }
+            }
+        </script>
     </body>
 </html>

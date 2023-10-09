@@ -6,42 +6,59 @@ body{
     background-color: #eae6e6;
     font-family: Arial, Helvetica, sans-serif;
 
-    a{
-        text-decoration: none;
-        color: #000;
-    }
-
     header{
-        padding: 1rem;
-        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        span{
+            a{
+                text-decoration: none;
+                font-size: 2rem;
+                font-weight: 800;
+                color: #000;
+            }
+        }
 
         nav{
             ul{
-                padding: 0;
-                margin: 0;
-                float: right;
-
-                li{
-                    display: inline-block;
-                }
-
-                #hamburger{
-                    ul{
+                display: flex;
+                gap: 1.5rem;
+                list-style: none;
+                color: #000;
+                
+                #menypunkter{
                         display: none;
-
-                        li{
-                            display: block;
-                        }
-                    }
+                        font-size: 1rem;
+                        font-weight: 600;
+                        padding: 0;
+                        margin: 1rem 0;
                 }
             }
+
         }
     }
 
-    section{
+    main{
+        section{
+            article{
+                #video{
+                    width: 100%;
+                    max-width: 700px;
 
-        #video{
-            width: 100%;
+                    @media only screen and (min-width: 600px){
+                        float: right;
+                    }
+                }
+
+                p{
+                    font-size: 0.7rem;
+
+                    @media only screen and (min-width: 600px){
+                        float: right;
+                    }
+                }
+            }
         }
     }
 }
