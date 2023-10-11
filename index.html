@@ -7,73 +7,75 @@
         <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <span>
-                <a href="index.html">LOGO</a>
-            </span>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
-                    <li id="hamburger"><a href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
-                        <ul id="menypunkter">
-                            <li>Hjem</li>
-                            <li>Kategori 1</li>
-                            <li>Kategori 2</li>
-                            <li>Kategori 3</li>
-                            <li>Min side</li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="videosnutt">
-                <article>
-                    <video id="video" autoplay muted loop> <!--Kilde for videotag (i tillegg til Webtricks LMS for kurset):  -->
-                        <source src="video/woman-shoe.mp4" type="video/mp4">
-                        Your browser does not support the embedded video.
-                    </video>
-                    <p>
-                        Stock footage provided by <a class="link author-link-popup" target="_blank" href="https://www.videvo.net/author/vidfy-Freepik/#rs=attribution-modal">Freepik</a>,
-                        downloaded from <a class="videvo-redirect" target="_blank" href="https://www.videvo.net/#rs=attribution-modal">videvo.net</a>
-                    </p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <img src="img/product-1.jpg" alt="En blå joggesko" />
-                    <p>Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Pixabay</a></p>
-                    <h2>Produkt 1</h2>
-                    <p>Pris</p>
-                </article>
-                <article>
-                    <img src="img/product-2.jpg" alt="En rosa joggesko" />
-                    <p>Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371624">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371624">Pixabay</a></p>
-                    <h2>Produkt 2</h2>
-                    <p>Pris</p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2>Sesongens nyheter</h2>
-                    <img src="img/news-white-shoes.jpg" alt="Føtter med hvite joggesko på" />
-                    <p>Bildet er tatt av <a href="https://pixabay.com/no/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1840619">Pexels</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1840619">Pixabay</a></p>
-                </article>
-            </section>
-        </main>
-        <footer>
-            <p>Designet av Martine Resberg Kihl</p>
-        </footer>
+        <div id="grid">
+            <header>
+                <span>
+                    <a href="index.html">LOGO</a>
+                </span>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
+                        <li id="hamburger"><a href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
+                            <ul id="menypunkter">
+                                <li>Hjem</li>
+                                <li>Kategori 1</li>
+                                <li>Kategori 2</li>
+                                <li>Kategori 3</li>
+                                <li>Min side</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section id="videosnutt">
+                    <article>
+                        <video id="video" autoplay muted loop> <!--Kilde for videotag (i tillegg til Webtricks LMS for kurset):  -->
+                            <source src="video/woman-shoe.mp4" type="video/mp4">
+                            Your browser does not support the embedded video.
+                        </video>
+                        <p>
+                            Stock footage provided by <a class="link author-link-popup" target="_blank" href="https://www.videvo.net/author/vidfy-Freepik/#rs=attribution-modal">Freepik</a>,
+                            downloaded from <a class="videvo-redirect" target="_blank" href="https://www.videvo.net/#rs=attribution-modal">videvo.net</a>
+                        </p>
+                    </article>
+                </section>
+                <section id="produkt">
+                    <article>
+                        <img src="img/product-1.jpg" alt="En blå joggesko" />
+                        <p>Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Pixabay</a></p>
+                        <h2>Produkt 1</h2>
+                        <p>Pris</p>
+                    </article>
+                    <article>
+                        <img src="img/product-2.jpg" alt="En rosa joggesko" />
+                        <p>Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371624">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371624">Pixabay</a></p>
+                        <h2>Produkt 2</h2>
+                        <p>Pris</p>
+                    </article>
+                </section>
+                <section>
+                    <article>
+                        <h2>Sesongens nyheter</h2>
+                        <img src="img/news-white-shoes.jpg" alt="Føtter med hvite joggesko på" />
+                        <p>Bildet er tatt av <a href="https://pixabay.com/no/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1840619">Pexels</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1840619">Pixabay</a></p>
+                    </article>
+                </section>
+            </main>
+            <footer>
+                <p>Designet av Martine Resberg Kihl</p>
+            </footer>
         <script src="https://kit.fontawesome.com/1a5507b8d7.js" crossorigin="anonymous"></script>
-        <script>
-            function navigasjon() {
-                let menyPunkter = document.getElementById("menypunkter")
-                if(menyPunkter.style.display === "block") {
-                    menyPunkter.style.display = "none"
-                } else {
-                    menyPunkter.style.display = "block"
+            <script>
+                function navigasjon() {
+                    let menyPunkter = document.getElementById("menypunkter")
+                    if(menyPunkter.style.display === "block") {
+                        menyPunkter.style.display = "none"
+                    } else {
+                        menyPunkter.style.display = "block"
+                    }
                 }
-            }
-        </script>
+            </script>
+        </div>
     </body>
 </html>

@@ -6,44 +6,60 @@ body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
 }
-body header {
+body #grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas: "header" "video" "produkter" "nyheter" "footer";
+}
+body #grid header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-body header span a {
+body #grid header span a {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800;
   color: #000;
 }
-body header nav ul {
+body #grid header nav {
+  display: flex;
+}
+body #grid header nav ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
   color: #000;
 }
-body header nav ul #menypunkter {
+body #grid header nav ul #menypunkter {
   display: none;
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
   margin: 1rem 0;
 }
-body main section article #video {
+body #grid main #videosnutt {
+  grid-area: video;
+}
+body #grid main #videosnutt article #video {
   width: 100%;
   max-width: 700px;
 }
 @media only screen and (min-width: 600px) {
-  body main section article #video {
+  body #grid main #videosnutt article #video {
     float: right;
   }
 }
-body main section article p {
+body #grid main #videosnutt article p {
   font-size: 0.7rem;
 }
 @media only screen and (min-width: 600px) {
-  body main section article p {
+  body #grid main #videosnutt article p {
     float: right;
   }
+}
+body #grid main #produkt {
+  grid-area: produkter;
 }/*# sourceMappingURL=main.css.map */

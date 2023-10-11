@@ -6,58 +6,79 @@ body{
     background-color: #eae6e6;
     font-family: Arial, Helvetica, sans-serif;
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
+    #grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "header"
+                            "video"
+                            "produkter"
+                            "nyheter"
+                            "footer";
 
-        span{
-            a{
-                text-decoration: none;
-                font-size: 2rem;
-                font-weight: 800;
-                color: #000;
+        header{
+            grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            span{
+                a{
+                    text-decoration: none;
+                    font-size: 2rem;
+                    font-weight: 800;
+                    color: #000;
+                }
             }
-        }
 
-        nav{
-            ul{
+            nav{
                 display: flex;
-                gap: 1.5rem;
-                list-style: none;
-                color: #000;
-                
-                #menypunkter{
-                        display: none;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        padding: 0;
-                        margin: 1rem 0;
+
+                ul{
+                    display: flex;
+                    gap: 1.5rem;
+                    list-style: none;
+                    color: #000;
+                    
+                    #menypunkter{
+                            display: none;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            padding: 0;
+                            margin: 1rem 0;
+                    }
+                }
+
+            }
+        }
+
+        main{
+
+            #videosnutt{
+                grid-area: video;
+
+                article{
+                    #video{
+                        width: 100%;
+                        max-width: 700px;
+
+                        @media only screen and (min-width: 600px){
+                            float: right;
+                        }
+                    }
+
+                    p{
+                        font-size: 0.7rem;
+
+                        @media only screen and (min-width: 600px){
+                            float: right;
+                        }
+                    }
                 }
             }
 
-        }
-    }
-
-    main{
-        section{
-            article{
-                #video{
-                    width: 100%;
-                    max-width: 700px;
-
-                    @media only screen and (min-width: 600px){
-                        float: right;
-                    }
-                }
-
-                p{
-                    font-size: 0.7rem;
-
-                    @media only screen and (min-width: 600px){
-                        float: right;
-                    }
-                }
+            #produkt{
+                grid-area: produkter;
             }
         }
     }
