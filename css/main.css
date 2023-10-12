@@ -6,60 +6,109 @@ body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
 }
-body #grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, auto);
-  grid-template-areas: "header" "video" "produkter" "nyheter" "footer";
-}
-body #grid header {
-  grid-area: header;
+body header {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  width: 100%;
+  justify-content: space-between;
 }
-body #grid header span a {
+body header span a {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800;
   color: #000;
 }
-body #grid header nav {
-  display: flex;
-}
-body #grid header nav ul {
+body header nav ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
   color: #000;
 }
-body #grid header nav ul #menypunkter {
+body header nav ul #menypunkter {
   display: none;
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
   margin: 1rem 0;
 }
-body #grid main #videosnutt {
+body main #grid-forside {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "video" "produkter" "nyheter" "kategorier";
+}
+body main #grid-forside #videosnutt {
   grid-area: video;
 }
-body #grid main #videosnutt article #video {
+body main #grid-forside #videosnutt article {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+body main #grid-forside #videosnutt article #video {
   width: 100%;
   max-width: 700px;
 }
-@media only screen and (min-width: 600px) {
-  body #grid main #videosnutt article #video {
-    float: right;
-  }
-}
-body #grid main #videosnutt article p {
-  font-size: 0.7rem;
-}
-@media only screen and (min-width: 600px) {
-  body #grid main #videosnutt article p {
-    float: right;
-  }
-}
-body #grid main #produkt {
+body main #grid-forside #produkt {
   grid-area: produkter;
+  display: flex;
+}
+body main #grid-forside #produkt article {
+  padding: 1rem;
+}
+body main #grid-forside #produkt article img {
+  width: 100%;
+}
+body main #grid-forside #nyheter {
+  grid-area: nyheter;
+}
+body main #grid-forside #nyheter article {
+  padding: 1rem;
+}
+body main #grid-forside #nyheter article img {
+  width: 100%;
+}
+body main #grid-forside #kategorier {
+  grid-area: kategorier;
+  display: flex;
+}
+body main #grid-forside #kategorier article {
+  padding: 1rem;
+}
+body main #grid-forside #kategorier article img {
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  body main #grid-forside {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  body main #grid-forside #videosnutt {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  body main #grid-forside #produkter {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  body main #grid-forside #nyheter {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+  }
+  body main #grid-forside #kategorier {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 5;
+  }
+}
+.bildekilde {
+  margin: 0;
+  font-size: 0.6rem;
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
