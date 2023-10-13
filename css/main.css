@@ -6,109 +6,157 @@ body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
 }
-body header {
+body #grid-hovedlayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "header" "main" "footer";
+}
+body #grid-hovedlayout header {
+  grid-area: header;
   display: flex;
   align-items: baseline;
   width: 100%;
   justify-content: space-between;
 }
-body header span a {
+body #grid-hovedlayout header span a {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800;
   color: #000;
 }
-body header nav ul {
+body #grid-hovedlayout header nav ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
   color: #000;
 }
-body header nav ul #menypunkter {
+body #grid-hovedlayout header nav ul #menypunkter {
   display: none;
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
   margin: 1rem 0;
 }
-body main #grid-forside {
+body #grid-hovedlayout main {
+  grid-area: main;
+}
+body #grid-hovedlayout main #grid-forside {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
-  grid-template-areas: "video" "produkter" "nyheter" "kategorier";
+  /*grid-template-areas: "video"
+                      "produkter"
+                      "nyheter"
+                      "kategorier";*/
 }
-body main #grid-forside #videosnutt {
-  grid-area: video;
+body #grid-hovedlayout main #grid-forside #videosnutt {
+  /*grid-area: video;*/
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
-body main #grid-forside #videosnutt article {
+body #grid-hovedlayout main #grid-forside #videosnutt article {
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
-body main #grid-forside #videosnutt article #video {
+body #grid-hovedlayout main #grid-forside #videosnutt article #video {
   width: 100%;
   max-width: 700px;
 }
-body main #grid-forside #produkt {
-  grid-area: produkter;
+body #grid-hovedlayout main #grid-forside #produkt {
+  /*grid-area: produkter;*/
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
   display: flex;
 }
-body main #grid-forside #produkt article {
+body #grid-hovedlayout main #grid-forside #produkt article {
   padding: 1rem;
+  width: 50%;
 }
-body main #grid-forside #produkt article img {
+body #grid-hovedlayout main #grid-forside #produkt article img {
   width: 100%;
 }
-body main #grid-forside #nyheter {
-  grid-area: nyheter;
+body #grid-hovedlayout main #grid-forside #nyheter {
+  /*grid-area: nyheter;*/
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
-body main #grid-forside #nyheter article {
+body #grid-hovedlayout main #grid-forside #nyheter article {
   padding: 1rem;
 }
-body main #grid-forside #nyheter article img {
+body #grid-hovedlayout main #grid-forside #nyheter article img {
   width: 100%;
 }
-body main #grid-forside #kategorier {
-  grid-area: kategorier;
+body #grid-hovedlayout main #grid-forside #kategorier {
+  /*grid-area: kategorier;*/
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
   display: flex;
 }
-body main #grid-forside #kategorier article {
+body #grid-hovedlayout main #grid-forside #kategorier article {
   padding: 1rem;
 }
-body main #grid-forside #kategorier article img {
+body #grid-hovedlayout main #grid-forside #kategorier article img {
   width: 100%;
 }
 @media only screen and (min-width: 600px) {
-  body main #grid-forside {
+  body #grid-hovedlayout main #grid-forside {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
   }
-  body main #grid-forside #videosnutt {
+  body #grid-hovedlayout main #grid-forside #videosnutt {
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 3;
   }
-  body main #grid-forside #produkter {
+  body #grid-hovedlayout main #grid-forside #produkt {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
+    display: flex;
   }
-  body main #grid-forside #nyheter {
+  body #grid-hovedlayout main #grid-forside #produkt article {
+    /*flex-direction: column;
+    display: inline-block; */
+    padding: 1rem;
+    width: 50%;
+  }
+  body #grid-hovedlayout main #grid-forside #produkt article img {
+    width: 100%;
+  }
+  body #grid-hovedlayout main #grid-forside #nyheter {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 5;
   }
-  body main #grid-forside #kategorier {
+  body #grid-hovedlayout main #grid-forside #kategorier {
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 5;
   }
 }
+body #grid-hovedlayout footer {
+  grid-area: footer;
+}
+
 .bildekilde {
   margin: 0;
   font-size: 0.6rem;
+}
+.bildekilde a {
   text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
