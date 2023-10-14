@@ -25,18 +25,55 @@ body #grid-hovedlayout header span a {
   font-weight: 800;
   color: #000;
 }
-body #grid-hovedlayout header nav ul {
+body #grid-hovedlayout header nav #navigasjonsliste {
   display: flex;
   gap: 1.5rem;
   list-style: none;
   color: #000;
 }
-body #grid-hovedlayout header nav ul #menypunkter {
+body #grid-hovedlayout header nav #navigasjonsliste #handlekurv {
+  display: none;
+}
+body #grid-hovedlayout header nav #navigasjonsliste #hamburger #menypunkter {
   display: none;
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
   margin: 1rem 0;
+}
+body #grid-hovedlayout header nav #navigasjonsliste #hamburger #menypunkter li {
+  list-style: none;
+}
+@media only screen and (min-width: 800px) {
+  body #grid-hovedlayout header {
+    justify-content: center;
+  }
+  body #grid-hovedlayout header nav {
+    width: 90%;
+  }
+  body #grid-hovedlayout header nav #navigasjonsliste {
+    flex-flow: row-reverse;
+    align-items: baseline;
+    width: 100%;
+    justify-content: space-between;
+  }
+  body #grid-hovedlayout header nav #navigasjonsliste #handlekurv {
+    display: block;
+  }
+  body #grid-hovedlayout header nav #navigasjonsliste #hamburger {
+    width: 90%;
+  }
+  body #grid-hovedlayout header nav #navigasjonsliste #hamburger #hamburgerikon {
+    display: none;
+  }
+  body #grid-hovedlayout header nav #navigasjonsliste #hamburger #menypunkter {
+    display: flex;
+    justify-content: space-around;
+  }
+  body #grid-hovedlayout header nav #navigasjonsliste #hamburger #menypunkter li {
+    list-style: none;
+    font-size: 1.8rem;
+  }
 }
 body #grid-hovedlayout main {
   grid-area: main;
@@ -108,7 +145,7 @@ body #grid-hovedlayout main #grid-forside #kategorier article {
 body #grid-hovedlayout main #grid-forside #kategorier article img {
   width: 100%;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   body #grid-hovedlayout main #grid-forside {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
