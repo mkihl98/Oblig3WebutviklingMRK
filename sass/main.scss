@@ -6,7 +6,7 @@ body{
     background-color: #eae6e6;
     font-family: Arial, Helvetica, sans-serif;
 
-    #grid-hovedlayout{
+    .grid-hovedlayout{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, auto);
@@ -33,18 +33,18 @@ body{
 
             nav{
 
-                #navigasjonsliste{
+                .navigasjonsliste{
                     display: flex;
                     gap: 1.5rem;
                     list-style: none;
                     color: #000;
 
-                    #handlekurv{
+                    .handlekurv{
                         display: none;
                     }
                     
-                    #hamburger{
-                        #menypunkter{
+                    .hamburger{
+                        .menypunkter{
                             display: none;
                             font-size: 1rem;
                             font-weight: 600;
@@ -67,24 +67,24 @@ body{
                 nav{
                     width: 90%;
 
-                    #navigasjonsliste{
+                    .navigasjonsliste{
                         flex-flow: row-reverse;
                         align-items: baseline;
                         width: 100%;
                         justify-content: space-between;
 
-                        #handlekurv{
+                        .handlekurv{
                             display: block;
                         }
 
-                        #hamburger{
+                        .hamburger{
                             width: 90%;
 
-                            #hamburgerikon{
+                            .hamburgerikon{
                                 display: none;
                             }
 
-                            #menypunkter{
+                            .menypunkter{
                                 display: flex;
                                 justify-content: space-around;
 

@@ -7,72 +7,75 @@
         <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <span>
-                <a href="index.html">LOGO</a>
-            </span>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
-                    <li id="hamburger"><a href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
-                        <ul id="menypunkter">
-                            <li>Hjem</li>
-                            <li>Kategori 1</li>
-                            <li>Kategori 2</li>
-                            <li>Kategori 3</li>
-                            <li>Min side</li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section>
-                <article>
-                    <img src="img/product-1.jpg" alt="En blå joggesko">
-                    <p class="bildekilde">Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Pixabay</a></p>
-                </article>
-            </section>
-            <section>
-                <!--Minibilder av produkt 1-->
-            </section>
-            <section id="produkt-info">
-                <h2>Navn på produkt 1</h2>
-                <p>1000 kr</p>
-                <p>Velg størrelse</p>
-                <p>Legg til i handlevogn</p>
-                <p class="frakt-retur">Informasjon om frakt</p>
-                <p class="frakt-retur">Informasjon om retur</p>
-            </section>
-            <section>
-                <!--Kundevurderinger-->
-            </section>
-            <section id="produkt-detaljer">
-                <article>
-                    <p>Detaljer om produktet</p>
-                    
-                </article>
-                <article>
-                    <p>Beskrivelse av produktet</p>
-                </article>
-                <article>
-                    <p>Informasjon om frakt, levering og retur</p>
-                </article>
-            </section>
-        </main>
-        <footer>
+        <div class="grid-hovedlayout">
+            <header>
+                <span>
+                    <a href="index.html">LOGO</a>
+                </span>
+                <nav>
+                    <ul class="navigasjonsliste">
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
+                        <li class="handlekurv"><a href="#"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #000000;"></i></a></li>
+                        <li class="hamburger"><a class="hamburgerikon" href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
+                            <ul class="menypunkter">
+                                <li>Hjem</li>
+                                <li>Kvinner</li>
+                                <li>Menn</li>
+                                <li>Barn</li>
+                                <li>Min side</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section>
+                    <article>
+                        <img src="img/product-1.jpg" alt="En blå joggesko">
+                        <p class="bildekilde">Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Pixabay</a></p>
+                    </article>
+                </section>
+                <section>
+                    <!--Minibilder av produkt 1-->
+                </section>
+                <section id="produkt-info">
+                    <h2>Navn på produkt 1</h2>
+                    <p>1000 kr</p>
+                    <p>Velg størrelse</p>
+                    <p>Legg til i handlevogn</p>
+                    <p class="frakt-retur">Informasjon om frakt</p>
+                    <p class="frakt-retur">Informasjon om retur</p>
+                </section>
+                <section>
+                    <!--Kundevurderinger-->
+                </section>
+                <section id="produkt-detaljer">
+                    <article>
+                        <p>Detaljer om produktet</p>
+                        
+                    </article>
+                    <article>
+                        <p>Beskrivelse av produktet</p>
+                    </article>
+                    <article>
+                        <p>Informasjon om frakt, levering og retur</p>
+                    </article>
+                </section>
+            </main>
+            <footer>
 
-        </footer>
-        <script src="https://kit.fontawesome.com/1a5507b8d7.js" crossorigin="anonymous"></script>
-        <script>
-            function navigasjon() {
-                let menyPunkter = document.getElementById("menypunkter")
-                if(menyPunkter.style.display === "block") {
-                    menyPunkter.style.display = "none"
-                } else {
-                    menyPunkter.style.display = "block"
+            </footer>
+            <script src="https://kit.fontawesome.com/1a5507b8d7.js" crossorigin="anonymous"></script>
+            <script>
+                function navigasjon() {
+                    let menyPunkter = document.getElementById("menypunkter")
+                    if(menyPunkter.style.display === "block") {
+                        menyPunkter.style.display = "none"
+                    } else {
+                        menyPunkter.style.display = "block"
+                    }
                 }
-            }
-        </script>
+            </script>
+        </div>
     </body>
 </html>
