@@ -102,7 +102,7 @@ body .grid-hovedlayout main #grid-forside #videosnutt article {
 }
 body .grid-hovedlayout main #grid-forside #videosnutt article #video {
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
 }
 body .grid-hovedlayout main #grid-forside #produkt {
   /*grid-area: produkter;*/
