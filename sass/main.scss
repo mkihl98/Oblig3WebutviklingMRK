@@ -33,15 +33,45 @@
                 }
                 
                 .hamburger{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    position: relative;
+
+                    a{
+                        padding: 0 0 1rem 0;
+                    }
                     .menypunkter{
                         display: none;
                         font-size: 1rem;
                         font-weight: 600;
                         padding: 0;
                         margin: 1rem 0;
+                        z-index: 50;
 
                         li{
                             list-style: none;
+                        }
+
+                        a{
+                            text-decoration: none;
+                        }
+                    }
+                    
+                    .responsive{
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        background-color: #575454;
+                        margin: 0;
+                        padding: 0.5rem;
+                        top: 40px;
+                        right: 0;
+
+                        a{
+                            display: inline-block;
+                            padding: 0.3rem;
+                            color: #ffffff;
                         }
                     }
                 }
@@ -68,18 +98,45 @@
 
                     .hamburger{
                         width: 90%;
+                        height: 35px;
+                        padding: 0 1rem 0 1rem;
 
-                        .hamburgerikon{
+                        #hamburgerikon{
                             display: none;
                         }
 
                         .menypunkter{
                             display: flex;
-                            justify-content: space-around;
+                            justify-content: space-between;
+                            position: absolute;
+                            width: 100%;
+                            margin: 0;
+                            top: 10px;
+                            padding: 0 2rem 0 2rem;
 
                             li{
                                 list-style: none;
                                 font-size: 1.8rem;
+
+                                a{
+                                    color: #000;
+                                }
+                            }
+                        }
+
+                        .responsive{
+                            display: flex;
+                            flex-direction: row;
+                            background-color: #eae6e6;
+                            margin: 0;
+                            padding: 0.5rem;
+                            top: 5px;
+                            right: 0;
+    
+                            a{
+                                display: inline-block;
+                                padding: 0.3rem;
+                                color: #000000;
                             }
                         }
                     }
