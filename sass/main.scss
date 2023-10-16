@@ -2,6 +2,93 @@
     box-sizing: border-box;
 }
 
+.header-oppsett{
+
+    header{
+        grid-area: header;
+        display: flex;
+        align-items: baseline;
+        width: 100%;
+        justify-content: space-between;
+
+        span{
+            a{
+                text-decoration: none;
+                font-size: 2rem;
+                font-weight: 800;
+                color: #000;
+            }
+        }
+
+        nav{
+
+            .navigasjonsliste{
+                display: flex;
+                gap: 1.5rem;
+                list-style: none;
+                color: #000;
+
+                .handlekurv{
+                    display: none;
+                }
+                
+                .hamburger{
+                    .menypunkter{
+                        display: none;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        padding: 0;
+                        margin: 1rem 0;
+
+                        li{
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media only screen and (min-width: 800px) {
+        header{
+            justify-content: center;
+
+            nav{
+                width: 90%;
+
+                .navigasjonsliste{
+                    flex-flow: row-reverse;
+                    align-items: baseline;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    .handlekurv{
+                        display: block;
+                    }
+
+                    .hamburger{
+                        width: 90%;
+
+                        .hamburgerikon{
+                            display: none;
+                        }
+
+                        .menypunkter{
+                            display: flex;
+                            justify-content: space-around;
+
+                            li{
+                                list-style: none;
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+
 body{
     background-color: #eae6e6;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,92 +101,8 @@ body{
                             "main"
                             "footer";
 
-
-        header{
-            grid-area: header;
-            display: flex;
-            align-items: baseline;
-            width: 100%;
-            justify-content: space-between;
-
-            span{
-                a{
-                    text-decoration: none;
-                    font-size: 2rem;
-                    font-weight: 800;
-                    color: #000;
-                }
-            }
-
-            nav{
-
-                .navigasjonsliste{
-                    display: flex;
-                    gap: 1.5rem;
-                    list-style: none;
-                    color: #000;
-
-                    .handlekurv{
-                        display: none;
-                    }
-                    
-                    .hamburger{
-                        .menypunkter{
-                            display: none;
-                            font-size: 1rem;
-                            font-weight: 600;
-                            padding: 0;
-                            margin: 1rem 0;
-
-                            li{
-                                list-style: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        @extend .header-oppsett;
         
-        @media only screen and (min-width: 800px) {
-            header{
-                justify-content: center;
-
-                nav{
-                    width: 90%;
-
-                    .navigasjonsliste{
-                        flex-flow: row-reverse;
-                        align-items: baseline;
-                        width: 100%;
-                        justify-content: space-between;
-
-                        .handlekurv{
-                            display: block;
-                        }
-
-                        .hamburger{
-                            width: 90%;
-
-                            .hamburgerikon{
-                                display: none;
-                            }
-
-                            .menypunkter{
-                                display: flex;
-                                justify-content: space-around;
-
-                                li{
-                                    list-style: none;
-                                    font-size: 1.8rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        } 
-
-
         main{
             grid-area: main;
 
@@ -205,8 +208,6 @@ body{
                         display: flex;
 
                         article{
-                            /*flex-direction: column;
-                            display: inline-block; */
                             padding: 1rem;
                             width: 50%;
         
@@ -235,6 +236,91 @@ body{
 
         footer{
             grid-area: footer;
+        }
+    }
+
+    #grid-kategori-layout{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "header"
+                            "aside"
+                            "main"
+                            "footer";
+
+        @extend .header-oppsett;
+
+        main{
+            grid-area: main;
+
+            section{
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+
+                h1{
+                    width: 100%;
+                }
+
+                article{
+                    padding: 1rem;
+                    width: 50%;
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+        aside{
+            grid-area: aside;
+        }
+
+        footer{
+            grid-area: footer;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        #grid-kategori-layout{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, auto);
+
+            header{
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            main{
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 4;
+
+                section{
+                    article{
+                        width: 33%;
+                    }
+                }
+            }
+        
+            aside{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 4;
+            }
+
+            footer{
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
         }
     }
 }
