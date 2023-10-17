@@ -11,21 +11,22 @@
     </head>
     <body>
         <div id="grid-kategori-layout">
-            <header>
+            <header class="linje">
                 <span>
                     <a href="index.html">LOGO</a>
                 </span>
                 <nav>
                     <ul class="navigasjonsliste">
-                        <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
-                        <li class="handlekurv"><a href="#"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #000000;"></i></a></li>
-                        <li class="hamburger"><a class="hamburgerikon" href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></a></li>
+                        <li class="handlekurv"><a href="#"><i class="fa-solid fa-cart-shopping fa-2xl"></i></a></li>
+                        <li class="hamburger"><a href="#"><i id="hamburgerikon" class="fa-solid fa-bars fa-2xl"></i></a>
                             <ul class="menypunkter">
-                                <li>Hjem</li>
-                                <li>Kvinner</li>
-                                <li>Menn</li>
-                                <li>Barn</li>
-                                <li>Min side</li>
+                                <li><a href="index.html">Hjem</a></li>
+                                <li><a href="kategori1.html">Kvinner</a></li>
+                                <li><a href="kategori1.html">Menn</a></li>
+                                <li><a href="kategori1.html">Barn</a></li>
+                                <li><a href="#">Min side</a></li>
+                                <li id="handlekurv-tekst"><a href="#">Handlekurv</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -37,7 +38,7 @@
                     <article>
                         <img src="img/product-1.jpg" alt="En blå joggesko">
                         <p class="bildekilde">Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Pixabay</a></p>
-                        <h2>Produkt 1</h2>
+                        <h2><a href="produkt.html">Produkt 1</a></h2>
                         <p>Pris</p>
                     </article>
                     <article>
@@ -91,22 +92,54 @@
                 </section>
             </main>
             <aside>
-                <h2>Filter</h2>
+                <h3><i class="fa-solid fa-arrow-down-wide-short fa-2xl"></i></h3>
+                <section id="filter-section">
+                    <h3>Filtrering for søk</h3>
+                    <article id="first-filter" class="linje">
+                        <p>Størrelse</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                    <article class="linje">
+                        <p>Modell</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                    <article class="linje">
+                        <p>Pris</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                    <article class="linje">
+                        <p>Demping</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                    <article class="linje">
+                        <p>Farge</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                    <article class="linje">
+                        <p>Materiale</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                    <article class="linje">
+                        <p>Fasong</p>
+                        <i class="fa-solid fa-plus fa-2xl"></i>
+                    </article>
+                </section>
 
             </aside>
             <footer>
                 <p>Designet av Martine Resberg Kihl</p>
             </footer>
-            <script>
-                function navigasjon() {
-                    let menyPunkter = document.getElementById("menypunkter")
-                    if(menyPunkter.style.display === "block") {
-                        menyPunkter.style.display = "none"
-                    } else {
-                        menyPunkter.style.display = "block"
-                    }
-                }
-            </script>
         </div>
+        <script>
+            let x = document.querySelector(".menypunkter")
+
+            document.getElementById("hamburgerikon").addEventListener("click", (e)=>{
+                if(x.className === "menypunkter") {
+                    x.className += " responsive"
+                } else {
+                    x.className = "menypunkter"
+                }
+            })
+        </script>
     </body>
 </html>

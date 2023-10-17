@@ -1,7 +1,9 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
 
+/*Oppsett for headeren, som jeg gjenbruker på alle sidene. Den er utformet for mobil, med media queries slik at den endrer seg når skjermen blir større:*/
 .header-oppsett header, body #grid-kategori-layout header, body .grid-hovedlayout header {
   grid-area: header;
   display: flex;
@@ -65,6 +67,7 @@
 @media only screen and (min-width: 800px) {
   .header-oppsett header, body #grid-kategori-layout header, body .grid-hovedlayout header {
     justify-content: center;
+    padding: 0 0 3rem 0;
   }
   .header-oppsett header nav, body #grid-kategori-layout header nav, body .grid-hovedlayout header nav {
     width: 90%;
@@ -102,6 +105,9 @@
   .header-oppsett header nav .navigasjonsliste .hamburger .menypunkter li a, body #grid-kategori-layout header nav .navigasjonsliste .hamburger .menypunkter li a, body .grid-hovedlayout header nav .navigasjonsliste .hamburger .menypunkter li a {
     color: #000;
   }
+  .header-oppsett header nav .navigasjonsliste .hamburger .menypunkter #handlekurv-tekst, body #grid-kategori-layout header nav .navigasjonsliste .hamburger .menypunkter #handlekurv-tekst, body .grid-hovedlayout header nav .navigasjonsliste .hamburger .menypunkter #handlekurv-tekst {
+    display: none;
+  }
   .header-oppsett header nav .navigasjonsliste .hamburger .responsive, body #grid-kategori-layout header nav .navigasjonsliste .hamburger .responsive, body .grid-hovedlayout header nav .navigasjonsliste .hamburger .responsive {
     display: flex;
     flex-direction: row;
@@ -121,6 +127,9 @@
 body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
+  /*Mobil: Grid til hovedkomponentene på forsiden: header, main og footer:*/
+  /*Mobil: Grid til hovedkomponentene på kategorisiden (header, aside, main og footer):*/
+  /*Desktop: Grid til hovedkomponentene på kategorisiden (header, aside, main og footer) når skjermen blir større:*/
 }
 body .grid-hovedlayout {
   display: grid;
@@ -130,6 +139,7 @@ body .grid-hovedlayout {
 }
 body .grid-hovedlayout main {
   grid-area: main;
+  /*Mobil: Grid til hovedkomponentene inne i main på forsiden (fire forskjellige <section> med hver sin #id:*/
 }
 body .grid-hovedlayout main #grid-forside {
   display: grid;
@@ -203,6 +213,7 @@ body .grid-hovedlayout main #grid-forside #kategorier article img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
+    padding: 2rem 0 0 0;
   }
   body .grid-hovedlayout main #grid-forside #videosnutt {
     grid-column-start: 3;
@@ -242,12 +253,16 @@ body .grid-hovedlayout footer {
 }
 body #grid-kategori-layout {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, auto);
   grid-template-areas: "header" "aside" "main" "footer";
+  /*grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "header"
+                      "aside"
+                      "main"
+                      "footer";*/
 }
 body #grid-kategori-layout main {
-  grid-area: main;
+  /*grid-area: main;*/
 }
 body #grid-kategori-layout main section {
   display: flex;
@@ -256,6 +271,8 @@ body #grid-kategori-layout main section {
 }
 body #grid-kategori-layout main section h1 {
   width: 100%;
+  font-size: 2.7rem;
+  margin: 0 0 1rem 0;
 }
 body #grid-kategori-layout main section article {
   padding: 1rem;
@@ -266,6 +283,15 @@ body #grid-kategori-layout main section article img {
 }
 body #grid-kategori-layout aside {
   grid-area: aside;
+  padding: 1rem 1rem 0 1rem;
+}
+body #grid-kategori-layout aside .fa-arrow-down-wide-short {
+  display: flex;
+  justify-content: end;
+  margin: 1rem 0 0 0;
+}
+body #grid-kategori-layout aside #filter-section {
+  display: none;
 }
 body #grid-kategori-layout footer {
   grid-area: footer;
@@ -273,6 +299,7 @@ body #grid-kategori-layout footer {
 @media only screen and (min-width: 800px) {
   body #grid-kategori-layout {
     display: grid;
+    /*grid-template-areas: "header header header" "aside main main" "aside main main" "footer footer footer";*/
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
   }
@@ -288,6 +315,11 @@ body #grid-kategori-layout footer {
     grid-row-start: 2;
     grid-row-end: 4;
   }
+  body #grid-kategori-layout main section h1 {
+    margin: 3rem 0 1rem 1rem;
+    padding: 0 0 2rem 1rem;
+    border-bottom: 2px solid #000;
+  }
   body #grid-kategori-layout main section article {
     width: 33%;
   }
@@ -296,6 +328,34 @@ body #grid-kategori-layout footer {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 4;
+  }
+  body #grid-kategori-layout aside .fa-arrow-down-wide-short {
+    display: none;
+  }
+  body #grid-kategori-layout aside #filter-section {
+    display: flex;
+    flex-direction: column;
+  }
+  body #grid-kategori-layout aside #filter-section h3 {
+    padding: 0 0 0 1rem;
+    font-size: 2rem;
+  }
+  body #grid-kategori-layout aside #filter-section #first-filter {
+    border-top: 2px solid #000;
+  }
+  body #grid-kategori-layout aside #filter-section article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  body #grid-kategori-layout aside #filter-section article p {
+    padding: 0.5rem 0 1rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 550;
+  }
+  body #grid-kategori-layout aside #filter-section article .fa-plus {
+    padding: 0.1rem 0.5rem 0 0;
   }
   body #grid-kategori-layout footer {
     grid-column-start: 1;
@@ -311,4 +371,13 @@ body #grid-kategori-layout footer {
 }
 .bildekilde a {
   text-decoration: none;
+}
+
+.fa-magnifying-glass, .fa-cart-shopping, .fa-bars, .fa-arrow-down-wide-short, .fa-plus {
+  color: #000;
+}
+
+/*Kilde for oppsett av rette linjer i CSS: https://www.shecodes.io/athena/5273-create-straight-and-horizontal-lines-with-css*/
+.linje {
+  border-bottom: 2px solid #000;
 }/*# sourceMappingURL=main.css.map */

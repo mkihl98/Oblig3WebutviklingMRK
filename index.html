@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="grid-hovedlayout">
-            <header>
+            <header class="linje">
                 <span>
                     <a href="index.html">LOGO</a>
                 </span>
@@ -26,6 +26,7 @@
                                 <li><a href="kategori1.html">Menn</a></li>
                                 <li><a href="kategori1.html">Barn</a></li>
                                 <li><a href="#">Min side</a></li>
+                                <li id="handlekurv-tekst"><a href="#">Handlekurv</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,7 +50,7 @@
                         <article>
                             <img src="img/product-1.jpg" alt="En blå joggesko">
                             <p class="bildekilde">Bildet er tatt av <a href="https://pixabay.com/no/users/stux-12364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Stefan Schweihofer</a> fra <a href="https://pixabay.com/no//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=371625">Pixabay</a></p>
-                            <h2>Produkt 1</h2>
+                            <h2><a href="produkt.html">Produkt 1</a></h2>
                             <p>Pris</p>
                         </article>
                         <article>
@@ -90,15 +91,6 @@
             </footer>
         </div>
         <script>
-            /*function navigasjon() {
-                let menyPunkter = document.getElementById("menypunkter")
-                if(menyPunkter.style.display = "block") {
-                    menyPunkter.style.display = "none"
-                } else {
-                    menyPunkter.style.display = "block"
-                }
-            }*/
-
             let x = document.querySelector(".menypunkter")
 
             document.getElementById("hamburgerikon").addEventListener("click", (e)=>{

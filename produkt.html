@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="grid-hovedlayout">
-            <header>
+            <header class="linje">
                 <span>
                     <a href="index.html">LOGO</a>
                 </span>
@@ -19,13 +19,14 @@
                     <ul class="navigasjonsliste">
                         <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i></a></li>
                         <li class="handlekurv"><a href="#"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #000000;"></i></a></li>
-                        <li class="hamburger"><a class="hamburgerikon" href="#" onclick="navigasjon()"><i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i></a>
+                        <li class="hamburger"><a href="#"><i id="hamburgerikon" class="fa-solid fa-bars fa-2xl"></i></a>
                             <ul class="menypunkter">
-                                <li>Hjem</li>
-                                <li>Kvinner</li>
-                                <li>Menn</li>
-                                <li>Barn</li>
-                                <li>Min side</li>
+                                <li><a href="index.html">Hjem</a></li>
+                                <li><a href="kategori1.html">Kvinner</a></li>
+                                <li><a href="kategori1.html">Menn</a></li>
+                                <li><a href="kategori1.html">Barn</a></li>
+                                <li><a href="#">Min side</a></li>
+                                <li id="handlekurv-tekst"><a href="#">Handlekurv</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -68,16 +69,17 @@
             <footer>
 
             </footer>
-            <script>
-                function navigasjon() {
-                    let menyPunkter = document.getElementById("menypunkter")
-                    if(menyPunkter.style.display === "block") {
-                        menyPunkter.style.display = "none"
-                    } else {
-                        menyPunkter.style.display = "block"
-                    }
-                }
-            </script>
         </div>
+        <script>
+            let x = document.querySelector(".menypunkter")
+
+            document.getElementById("hamburgerikon").addEventListener("click", (e)=>{
+                if(x.className === "menypunkter") {
+                    x.className += " responsive"
+                } else {
+                    x.className = "menypunkter"
+                }
+            })
+        </script>
     </body>
 </html>

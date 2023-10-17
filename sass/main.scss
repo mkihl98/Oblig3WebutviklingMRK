@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/*Oppsett for headeren, som jeg gjenbruker på alle sidene. Den er utformet for mobil, med media queries slik at den endrer seg når skjermen blir større:*/
 .header-oppsett{
 
     header{
@@ -82,6 +83,7 @@
     @media only screen and (min-width: 800px) {
         header{
             justify-content: center;
+            padding: 0 0 3rem 0;
 
             nav{
                 width: 90%;
@@ -122,6 +124,10 @@
                                     color: #000;
                                 }
                             }
+
+                            #handlekurv-tekst{
+                                display: none;
+                            }
                         }
 
                         .responsive{
@@ -150,6 +156,7 @@ body{
     background-color: #eae6e6;
     font-family: Arial, Helvetica, sans-serif;
 
+/*Mobil: Grid til hovedkomponentene på forsiden: header, main og footer:*/
     .grid-hovedlayout{
         display: grid;
         grid-template-columns: 1fr;
@@ -163,6 +170,7 @@ body{
         main{
             grid-area: main;
 
+/*Mobil: Grid til hovedkomponentene inne i main på forsiden (fire forskjellige <section> med hver sin #id:*/
             #grid-forside{
                 display: grid;
                 grid-template-columns: 1fr;
@@ -249,6 +257,7 @@ body{
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                     grid-template-rows: repeat(4, auto);
+                    padding: 2rem 0 0 0;
 
                     #videosnutt{
                         grid-column-start: 3;
@@ -296,19 +305,21 @@ body{
         }
     }
 
+/*Mobil: Grid til hovedkomponentene på kategorisiden (header, aside, main og footer):*/
     #grid-kategori-layout{
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-areas: "header" "aside" "main" "footer";
+        /*grid-template-columns: 1fr;
         grid-template-rows: repeat(4, auto);
         grid-template-areas: "header"
                             "aside"
                             "main"
-                            "footer";
+                            "footer";*/
 
         @extend .header-oppsett;
 
         main{
-            grid-area: main;
+            /*grid-area: main;*/
 
             section{
                 display: flex;
@@ -317,6 +328,8 @@ body{
 
                 h1{
                     width: 100%;
+                    font-size: 2.7rem;
+                    margin: 0 0 1rem 0;
                 }
 
                 article{
@@ -332,6 +345,17 @@ body{
         
         aside{
             grid-area: aside;
+            padding: 1rem 1rem 0 1rem;
+
+            .fa-arrow-down-wide-short{
+                display: flex;
+                justify-content: end;
+                margin: 1rem 0 0 0;
+            }
+
+            #filter-section{
+                display: none;
+            }
         }
 
         footer{
@@ -339,9 +363,11 @@ body{
         }
     }
 
+/*Desktop: Grid til hovedkomponentene på kategorisiden (header, aside, main og footer) når skjermen blir større:*/
     @media only screen and (min-width: 800px) {
         #grid-kategori-layout{
             display: grid;
+            /*grid-template-areas: "header header header" "aside main main" "aside main main" "footer footer footer";*/
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, auto);
 
@@ -359,6 +385,12 @@ body{
                 grid-row-end: 4;
 
                 section{
+
+                    h1{
+                        margin: 3rem 0 1rem 1rem;
+                        padding: 0 0 2rem 1rem;
+                        border-bottom: 2px solid #000;
+                    }
                     article{
                         width: 33%;
                     }
@@ -370,6 +402,41 @@ body{
                 grid-column-end: 2;
                 grid-row-start: 2;
                 grid-row-end: 4;
+
+                .fa-arrow-down-wide-short{
+                    display: none;
+                }
+
+                #filter-section{
+                    display: flex;
+                    flex-direction: column;
+
+                    h3{
+                        padding: 0 0 0 1rem;
+                        font-size: 2rem;
+                    }
+
+                    #first-filter{
+                        border-top: 2px solid #000;
+                    }
+
+                    article{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: baseline;
+
+                        p{
+                            padding: 0.5rem 0 1rem 1rem;
+                            font-size: 1.5rem;
+                            font-weight: 550;
+                        }
+
+                        .fa-plus{
+                            padding: 0.1rem 0.5rem 0 0;
+                        }
+                    }
+                }
             }
 
             footer{
@@ -388,4 +455,13 @@ body{
     a{
         text-decoration: none;
     }
+}
+
+.fa-magnifying-glass, .fa-cart-shopping, .fa-bars, .fa-arrow-down-wide-short, .fa-plus{
+    color: #000;
+}
+
+/*Kilde for oppsett av rette linjer i CSS: https://www.shecodes.io/athena/5273-create-straight-and-horizontal-lines-with-css*/
+.linje{
+    border-bottom: 2px solid #000;
 }
