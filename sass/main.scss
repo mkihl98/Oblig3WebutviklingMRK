@@ -156,7 +156,7 @@ body{
     background-color: #eae6e6;
     font-family: Arial, Helvetica, sans-serif;
 
-/*Mobil: Grid til hovedkomponentene på forsiden: header, main og footer:*/
+/*Forside mobil: Grid til hovedkomponentene (header, main og footer):*/
     .grid-hovedlayout{
         display: grid;
         grid-template-columns: 1fr;
@@ -170,7 +170,7 @@ body{
         main{
             grid-area: main;
 
-/*Mobil: Grid til hovedkomponentene inne i main på forsiden (fire forskjellige <section> med hver sin #id:*/
+/*Forside mobil: Grid til hovedkomponentene inne i main (fire forskjellige <section> med hver sin #id):*/
             #grid-forside{
                 display: grid;
                 grid-template-columns: 1fr;
@@ -251,6 +251,7 @@ body{
                 }
             }
 
+/*Forside desktop: Grid til hovedkomponentene inne i main (fire forskjellige <section> med hver sin #id):*/
             @media only screen and (min-width: 700px) {
 
                 #grid-forside{
@@ -305,7 +306,36 @@ body{
         }
     }
 
-/*Mobil: Grid til hovedkomponentene på kategorisiden (header, aside, main og footer):*/
+/*Forside desktop: Grid til hovedkomponentene i body (header, main og footer):*/
+    @media only screen and (min-width: 700px) {
+        .grid-hovedlayout{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(3, auto);
+
+            header{
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            main{
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            footer{
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+        }
+    }
+
+/*Kategoriside mobil: Grid til hovedkomponentene (header, aside, main og footer):*/
     #grid-kategori-layout{
         display: grid;
         grid-template-areas: "header" "aside" "main" "footer";
@@ -363,7 +393,7 @@ body{
         }
     }
 
-/*Desktop: Grid til hovedkomponentene på kategorisiden (header, aside, main og footer) når skjermen blir større:*/
+/*Kategoriside desktop: Grid til hovedkomponentene (header, aside, main og footer) når skjermen blir større:*/
     @media only screen and (min-width: 800px) {
         #grid-kategori-layout{
             display: grid;
@@ -449,14 +479,17 @@ body{
     }
 }
 
+/*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/
 .bildekilde{
     margin: 0;
     font-size: 0.6rem;
     a{
         text-decoration: none;
+        color: #000;
     }
 }
 
+/*Fargejustering på alle ikonene fra fontawesome.com*/
 .fa-magnifying-glass, .fa-cart-shopping, .fa-bars, .fa-arrow-down-wide-short, .fa-plus{
     color: #000;
 }
