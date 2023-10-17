@@ -306,7 +306,7 @@ body{
         }
     }
 
-/*Forside desktop: Grid til hovedkomponentene i body (header, main og footer):*/
+/*Forside desktop: Grid til hovedkomponentene i body (header, main og footer) når skjermen blir større:*/
     @media only screen and (min-width: 700px) {
         .grid-hovedlayout{
             grid-template-columns: 1fr 1fr 1fr;
@@ -338,18 +338,17 @@ body{
 /*Kategoriside mobil: Grid til hovedkomponentene (header, aside, main og footer):*/
     #grid-kategori-layout{
         display: grid;
-        grid-template-areas: "header" "aside" "main" "footer";
-        /*grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: repeat(4, auto);
         grid-template-areas: "header"
                             "aside"
                             "main"
-                            "footer";*/
+                            "footer";
 
         @extend .header-oppsett;
 
         main{
-            /*grid-area: main;*/
+            grid-area: main;
 
             section{
                 display: flex;
@@ -397,7 +396,6 @@ body{
     @media only screen and (min-width: 800px) {
         #grid-kategori-layout{
             display: grid;
-            /*grid-template-areas: "header header header" "aside main main" "aside main main" "footer footer footer";*/
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, auto);
 
@@ -477,6 +475,158 @@ body{
             }
         }
     }
+
+/*Produktside mobil: Grid til hovedkomponentene (header, main, aside og footer):*/
+    #grid-produkt-layout{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "header"
+                            "main"
+                            "aside"
+                            "footer";
+
+        @extend .header-oppsett;
+
+        main{
+            grid-area: main;
+            padding: 2rem 0 0 0;
+
+            #produktbilde{
+                article{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+
+            #minibilder{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0.5rem 0 0 0;
+            }
+
+            #produkt-detaljer{
+                article{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: baseline;
+
+                    p{
+                        padding: 0.5rem 0 0.8rem 1rem;
+                        font-size: 1.3rem;
+                        font-weight: 550;
+                    }
+
+                    .fa-plus{
+                        padding: 2rem 1rem 0 0;
+                    }
+                }
+            }
+        }
+
+        aside{
+            grid-area: aside;
+            background-color: #ffffff;
+            margin: 2rem 0.4rem;
+            padding: 0 0.5rem 1rem 0.5rem;
+
+            section{
+
+                h3{
+                    font-size: 1.3rem;
+                }
+
+                article{
+
+                    .fa-star, .fa-star-half-stroke{
+                        padding: 0.5rem 0 0 0;
+                    }
+                }
+            }
+        }
+
+        footer{
+            grid-area: footer;
+        }
+    }
+
+/*Produktside desktop: Grid for hovedkomponentene (header, main, aside og footer) når skjermen blir større:*/
+    @media only screen and (min-width: 700px) {
+        #grid-produkt-layout{
+            display: grid;
+            /*grid-template-areas: "header header header" "main main main" "main main aside" "footer footer footer";
+                
+            header{
+                grid-area: header;
+            }
+
+            main{
+                grid-area: main;
+            }
+
+            aside{
+                grid-area: aside;
+            }
+
+            footer{
+                grid-area: footer;
+            }*/
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, auto);
+
+            header{
+                grid-column-start: 1;
+                grid-column-end: 7;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            main{
+                grid-column-start: 1;
+                grid-column-end: 7;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                #produktbilde{
+                    width: 50%;
+                }
+
+                #minibilder{
+                    flex-direction: column;
+                }
+
+                #produkt-info{
+                    width: 30%;
+                }
+
+                #produkt-detaljer{
+                    width: 50%;
+                }
+            }
+
+            aside{
+                grid-column-start: 4;
+                grid-column-end: 7;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                display: flex;
+            }
+
+            footer{
+                grid-column-start: 1;
+                grid-column-end: 7;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+        }
+    }
 }
 
 /*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/
@@ -492,6 +642,10 @@ body{
 /*Fargejustering på alle ikonene fra fontawesome.com*/
 .fa-magnifying-glass, .fa-cart-shopping, .fa-bars, .fa-arrow-down-wide-short, .fa-plus{
     color: #000;
+}
+
+.fa-star, .fa-star-half-stroke{
+    color: #f0b510;
 }
 
 /*Kilde for oppsett av rette linjer i CSS: https://www.shecodes.io/athena/5273-create-straight-and-horizontal-lines-with-css*/
