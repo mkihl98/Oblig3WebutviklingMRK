@@ -390,8 +390,8 @@ body #grid-kategori-layout footer {
 body #grid-produkt-layout {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas: "header" "main" "aside" "footer";
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "header" "main" "footer";
 }
 body #grid-produkt-layout main {
   grid-area: main;
@@ -420,16 +420,16 @@ body #grid-produkt-layout main #produkt-detaljer article p {
 body #grid-produkt-layout main #produkt-detaljer article .fa-plus {
   padding: 2rem 1rem 0 0;
 }
-body #grid-produkt-layout aside {
-  grid-area: aside;
+body #grid-produkt-layout main #kundevurderinger {
+  display: flex;
   background-color: #ffffff;
   margin: 2rem 0.4rem;
   padding: 0 0.5rem 1rem 0.5rem;
 }
-body #grid-produkt-layout aside section h3 {
+body #grid-produkt-layout main #kundevurderinger h3 {
   font-size: 1.3rem;
 }
-body #grid-produkt-layout aside section article .fa-star, body #grid-produkt-layout aside section article .fa-star-half-stroke {
+body #grid-produkt-layout main #kundevurderinger article .fa-star, body #grid-produkt-layout main #kundevurderinger article .fa-star-half-stroke {
   padding: 0.5rem 0 0 0;
 }
 body #grid-produkt-layout footer {
@@ -438,35 +438,18 @@ body #grid-produkt-layout footer {
 @media only screen and (min-width: 700px) {
   body #grid-produkt-layout {
     display: grid;
-    /*grid-template-areas: "header header header" "main main main" "main main aside" "footer footer footer";
-
-    header{
-        grid-area: header;
-    }
-
-    main{
-        grid-area: main;
-    }
-
-    aside{
-        grid-area: aside;
-    }
-
-    footer{
-        grid-area: footer;
-    }*/
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
   }
   body #grid-produkt-layout header {
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   body #grid-produkt-layout main {
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 4;
     display: flex;
@@ -484,18 +467,17 @@ body #grid-produkt-layout footer {
     width: 30%;
   }
   body #grid-produkt-layout main #produkt-detaljer {
-    width: 50%;
+    width: 30%;
   }
-  body #grid-produkt-layout aside {
-    grid-column-start: 4;
-    grid-column-end: 7;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    display: flex;
+  body #grid-produkt-layout main #kundevurderinger {
+    width: 30%;
+  }
+  body #grid-produkt-layout main #kundevurderinger article {
+    width: 100%;
   }
   body #grid-produkt-layout footer {
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: 5;
     grid-row-start: 4;
     grid-row-end: 5;
   }
