@@ -259,6 +259,7 @@ body .grid-hovedlayout footer {
   body .grid-hovedlayout {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3, auto);
+    margin: 1rem;
   }
   body .grid-hovedlayout header {
     grid-column-start: 1;
@@ -288,6 +289,13 @@ body #grid-kategori-layout {
 body #grid-kategori-layout main {
   grid-area: main;
 }
+body #grid-kategori-layout main .breadcrumb p {
+  margin: 0.2rem 0.4rem;
+}
+body #grid-kategori-layout main .breadcrumb a {
+  text-decoration: none;
+  color: #000;
+}
 body #grid-kategori-layout main section {
   display: flex;
   width: 100%;
@@ -304,6 +312,16 @@ body #grid-kategori-layout main section article {
 }
 body #grid-kategori-layout main section article img {
   width: 100%;
+}
+body #grid-kategori-layout main section article h2 {
+  margin: 0.5rem 0 0.3rem 0.3rem;
+}
+body #grid-kategori-layout main section article h2 a {
+  text-decoration: none;
+  color: #000;
+}
+body #grid-kategori-layout main section article p {
+  margin: 0 0 0 0.3rem;
 }
 body #grid-kategori-layout aside {
   grid-area: aside;
@@ -325,6 +343,7 @@ body #grid-kategori-layout footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
+    margin: 1rem;
   }
   body #grid-kategori-layout header {
     grid-column-start: 1;
@@ -339,7 +358,7 @@ body #grid-kategori-layout footer {
     grid-row-end: 4;
   }
   body #grid-kategori-layout main section h1 {
-    margin: 3rem 0 1rem 1rem;
+    margin: 1rem 0 1rem 1rem;
     padding: 0 0 2rem 1rem;
     border-bottom: 2px solid #000;
   }
@@ -358,6 +377,7 @@ body #grid-kategori-layout footer {
   body #grid-kategori-layout aside #filter-section {
     display: flex;
     flex-direction: column;
+    margin: 4rem 0 0 0;
   }
   body #grid-kategori-layout aside #filter-section h3 {
     padding: 0 0 0 1rem;
@@ -395,7 +415,14 @@ body #grid-produkt-layout {
 }
 body #grid-produkt-layout main {
   grid-area: main;
-  padding: 2rem 0 0 0;
+  padding: 0;
+}
+body #grid-produkt-layout main .breadcrumb p {
+  margin: 0.2rem 0.4rem;
+}
+body #grid-produkt-layout main .breadcrumb a {
+  text-decoration: none;
+  color: #000;
 }
 body #grid-produkt-layout main #produktbilde article img {
   width: 100%;
@@ -405,6 +432,66 @@ body #grid-produkt-layout main #minibilder {
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 0 0 0;
+}
+body #grid-produkt-layout main #minibilder img {
+  width: 100%;
+  padding: 0 1rem 0 0;
+}
+body #grid-produkt-layout main #produkt-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 2rem 0 0.5rem;
+}
+body #grid-produkt-layout main #produkt-info p {
+  width: 100%;
+}
+body #grid-produkt-layout main #produkt-info .text-right {
+  width: 50%;
+  margin: 0;
+  font-size: 2rem;
+}
+body #grid-produkt-layout main #produkt-info #pris {
+  display: flex;
+  justify-content: end;
+}
+body #grid-produkt-layout main #produkt-info form {
+  margin: 3rem 0 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body #grid-produkt-layout main #produkt-info form label {
+  font-size: 1.5rem;
+  align-self: center;
+}
+body #grid-produkt-layout main #produkt-info form select { /*På utformingen av select har jeg tatt utgangspunkt i hva Ann-Charlott gjorde på sitt select-felt i index.html i HTML-skjema i github-repository for Webutvikling:*/
+  flex-basis: 60%;
+  border-radius: 6px;
+  border: 0.4px solid #000;
+  font-size: 1.2rem;
+  text-align: center;
+}
+body #grid-produkt-layout main #produkt-info a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 0.4px solid #000;
+  padding: 1rem 0.3rem;
+  margin: 1rem 0 0 0;
+  font-size: 1.9rem;
+  color: #000;
+  align-content: center;
+}
+body #grid-produkt-layout main #produkt-info #praktisk-info .frakt-retur {
+  font-style: italic;
+  margin: 0.4rem 0 0.4rem 0;
+}
+body #grid-produkt-layout main #produkt-detaljer {
+  margin: 1rem 0 0 0;
+  padding: 0 1rem 0 0;
 }
 body #grid-produkt-layout main #produkt-detaljer article {
   display: flex;
@@ -422,6 +509,7 @@ body #grid-produkt-layout main #produkt-detaljer article .fa-plus {
 }
 body #grid-produkt-layout main #kundevurderinger {
   display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   margin: 2rem 0.4rem;
   padding: 0 0.5rem 1rem 0.5rem;
@@ -440,6 +528,7 @@ body #grid-produkt-layout footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
+    margin: 1rem;
   }
   body #grid-produkt-layout header {
     grid-column-start: 1;
@@ -461,16 +550,58 @@ body #grid-produkt-layout footer {
     width: 50%;
   }
   body #grid-produkt-layout main #minibilder {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 0 0 1rem;
+    max-width: 270px;
+    width: 20%;
+  }
+  body #grid-produkt-layout main #minibilder article {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 0 1rem 0 0;
+  }
+  body #grid-produkt-layout main #minibilder article img {
+    width: 100%;
+    padding: 0;
   }
   body #grid-produkt-layout main #produkt-info {
     width: 30%;
+    margin: 0;
+  }
+  body #grid-produkt-layout main #produkt-info .text-right {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    font-size: 3.5rem;
+  }
+  body #grid-produkt-layout main #produkt-info #pris {
+    font-size: 2rem;
+  }
+  body #grid-produkt-layout main #produkt-info form {
+    margin: 1rem 0;
+  }
+  body #grid-produkt-layout main #produkt-info form select {
+    height: -moz-fit-content;
+    height: fit-content;
+    align-self: center;
+  }
+  body #grid-produkt-layout main #produkt-info a {
+    align-self: center;
+  }
+  body #grid-produkt-layout main #produkt-info #praktisk-info .frakt-retur {
+    margin: 0.4rem 0;
   }
   body #grid-produkt-layout main #produkt-detaljer {
-    width: 30%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   body #grid-produkt-layout main #kundevurderinger {
-    width: 30%;
+    width: 48%;
+    margin: 1rem 0 0 0.7rem;
   }
   body #grid-produkt-layout main #kundevurderinger article {
     width: 100%;
@@ -481,6 +612,15 @@ body #grid-produkt-layout footer {
     grid-row-start: 4;
     grid-row-end: 5;
   }
+}
+
+/*Brødsmulesti til kategori- og produktsiden*/
+.smulesti, body #grid-kategori-layout main .breadcrumb, body #grid-produkt-layout main .breadcrumb {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  align-items: baseline;
+  padding: 0 0 1rem 0.5rem;
 }
 
 /*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/

@@ -311,6 +311,7 @@ body{
         .grid-hovedlayout{
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(3, auto);
+            margin: 1rem;
 
             header{
                 grid-column-start: 1;
@@ -350,6 +351,19 @@ body{
         main{
             grid-area: main;
 
+            .breadcrumb{
+                @extend .smulesti;
+
+                p{
+                    margin: 0.2rem 0.4rem;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+
             section{
                 display: flex;
                 width: 100%;
@@ -367,6 +381,19 @@ body{
 
                     img{
                         width: 100%;
+                    }
+
+                    h2{
+                        margin: 0.5rem 0 0.3rem 0.3rem;
+
+                        a{
+                            text-decoration: none;
+                            color: #000;
+                        }
+                    }
+
+                    p{
+                        margin: 0 0 0 0.3rem;
                     }
                 }
             }
@@ -398,6 +425,7 @@ body{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, auto);
+            margin: 1rem;
 
             header{
                 grid-column-start: 1;
@@ -415,7 +443,7 @@ body{
                 section{
 
                     h1{
-                        margin: 3rem 0 1rem 1rem;
+                        margin: 1rem 0 1rem 1rem;
                         padding: 0 0 2rem 1rem;
                         border-bottom: 2px solid #000;
                     }
@@ -438,6 +466,7 @@ body{
                 #filter-section{
                     display: flex;
                     flex-direction: column;
+                    margin: 4rem 0 0 0;
 
                     h3{
                         padding: 0 0 0 1rem;
@@ -489,7 +518,20 @@ body{
 
         main{
             grid-area: main;
-            padding: 2rem 0 0 0;
+            padding: 0;
+
+            .breadcrumb{
+                @extend .smulesti;
+
+                p{
+                    margin: 0.2rem 0.4rem;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
 
             #produktbilde{
                 article{
@@ -504,9 +546,80 @@ body{
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 0.5rem 0 0 0;
+
+                img{
+                    width: 100%;
+                    padding: 0 1rem 0 0;
+                }
+            }
+
+            #produkt-info{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 2rem 2rem 0 0.5rem;
+
+                p{
+                    width: 100%;
+                }
+
+                .text-right{
+                    width: 50%;
+                    margin: 0;
+                    font-size: 2rem;
+                }
+
+                #pris{
+                    display: flex;
+                    justify-content: end;
+                }
+
+                form{
+                    margin: 3rem 0 1rem 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    label{
+                        font-size: 1.5rem;
+                        align-self: center;
+                    }
+
+                    select{ /*På utformingen av select har jeg tatt utgangspunkt i hva Ann-Charlott gjorde på sitt select-felt i index.html i HTML-skjema i github-repository for Webutvikling:*/
+                        flex-basis: 60%;
+                        border-radius: 6px;
+                        border: 0.4px solid #000;
+                        font-size: 1.2rem;
+                        text-align: center;
+                    }
+                }
+
+                a{
+                    display: flex;
+                    justify-content: center;
+                    text-decoration: none;
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 6px;
+                    border: 0.4px solid #000;
+                    padding: 1rem 0.3rem;
+                    margin: 1rem 0 0 0;
+                    font-size: 1.9rem;
+                    color: #000;
+                    align-content: center;
+                }
+
+                #praktisk-info{
+                    .frakt-retur{
+                        font-style: italic;
+                        margin: 0.4rem 0 0.4rem 0;
+                    }
+                }
             }
 
             #produkt-detaljer{
+                margin: 1rem 0 0 0;
+                padding: 0 1rem 0 0;
+
                 article{
                     display: flex;
                     flex-direction: row;
@@ -527,6 +640,7 @@ body{
 
             #kundevurderinger{
                 display: flex;
+                flex-direction: column;
                 background-color: #ffffff;
                 margin: 2rem 0.4rem;
                 padding: 0 0.5rem 1rem 0.5rem;
@@ -554,6 +668,7 @@ body{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: repeat(4, auto);
+            margin: 1rem;
 
             header{
                 grid-column-start: 1;
@@ -577,19 +692,70 @@ body{
                 }
 
                 #minibilder{
-                    flex-direction: column;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    padding: 0 0 0 1rem;
+                    max-width: 270px;
+                    width: 20%;
+
+                    article{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 50%;
+                        padding: 0 1rem 0 0;
+
+                        img{
+                            width: 100%;
+                            padding: 0;
+                        }
+                    }
                 }
 
                 #produkt-info{
                     width: 30%;
+                    margin: 0;
+
+                    .text-right{
+                        display: flex;
+                        justify-content: end;
+                        width: 100%;
+                        font-size: 3.5rem;
+                    }
+
+                    #pris{
+                        font-size: 2rem;
+                    }
+
+                    form{
+                        margin: 1rem 0;
+
+                        select{
+                            height: fit-content;
+                            align-self: center;
+                        }
+                    }
+
+                    a{
+                        align-self: center;
+                    }
+
+                    #praktisk-info{
+                        .frakt-retur{
+                            margin: 0.4rem 0;
+                        }
+                    }
                 }
 
                 #produkt-detaljer{
-                    width: 30%;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
 
                 #kundevurderinger{
-                    width: 30%;
+                    width: 48%;
+                    margin: 1rem 0 0 0.7rem;
 
                     article{
                         width: 100%;
@@ -605,6 +771,15 @@ body{
             }
         }
     }
+}
+
+/*Brødsmulesti til kategori- og produktsiden*/
+.smulesti{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    align-items: baseline;
+    padding: 0 0 1rem 0.5rem;
 }
 
 /*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/
