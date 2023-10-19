@@ -214,6 +214,19 @@ body{
                         img{
                             width: 100%;
                         }
+
+                        h2{
+                            margin: 0.5rem 0 0.3rem 0.3rem;
+    
+                            a{
+                                text-decoration: none;
+                                color: #000;
+                            }
+                        }
+    
+                        p{
+                            margin: 0 0 0.5rem 0.3rem;
+                        }
                     }
                 }
 
@@ -547,9 +560,11 @@ body{
                 justify-content: space-between;
                 padding: 0.5rem 0 0 0;
 
-                img{
-                    width: 100%;
-                    padding: 0 1rem 0 0;
+                article{
+                    img{
+                        width: 100%;
+                        padding: 0 1rem 0 0;
+                    }
                 }
             }
 
@@ -705,7 +720,6 @@ body{
                         padding: 0 1rem 0 0;
 
                         img{
-                            width: 100%;
                             padding: 0;
                         }
                     }

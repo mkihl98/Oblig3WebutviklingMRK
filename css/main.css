@@ -185,6 +185,16 @@ body .grid-hovedlayout main #grid-forside #produkt article {
 body .grid-hovedlayout main #grid-forside #produkt article img {
   width: 100%;
 }
+body .grid-hovedlayout main #grid-forside #produkt article h2 {
+  margin: 0.5rem 0 0.3rem 0.3rem;
+}
+body .grid-hovedlayout main #grid-forside #produkt article h2 a {
+  text-decoration: none;
+  color: #000;
+}
+body .grid-hovedlayout main #grid-forside #produkt article p {
+  margin: 0 0 0.5rem 0.3rem;
+}
 body .grid-hovedlayout main #grid-forside #nyheter {
   /*grid-area: nyheter;*/
   grid-column-start: 1;
@@ -433,7 +443,7 @@ body #grid-produkt-layout main #minibilder {
   justify-content: space-between;
   padding: 0.5rem 0 0 0;
 }
-body #grid-produkt-layout main #minibilder img {
+body #grid-produkt-layout main #minibilder article img {
   width: 100%;
   padding: 0 1rem 0 0;
 }
@@ -563,7 +573,6 @@ body #grid-produkt-layout footer {
     padding: 0 1rem 0 0;
   }
   body #grid-produkt-layout main #minibilder article img {
-    width: 100%;
     padding: 0;
   }
   body #grid-produkt-layout main #produkt-info {
