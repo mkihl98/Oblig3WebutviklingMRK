@@ -181,12 +181,15 @@ body .grid-hovedlayout main #grid-forside #produkt {
 body .grid-hovedlayout main #grid-forside #produkt article {
   padding: 1rem;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body .grid-hovedlayout main #grid-forside #produkt article img {
   width: 100%;
 }
 body .grid-hovedlayout main #grid-forside #produkt article h2 {
-  margin: 0.5rem 0 0.3rem 0.3rem;
+  margin: 0 0 0.3rem 0.3rem;
 }
 body .grid-hovedlayout main #grid-forside #produkt article h2 a {
   text-decoration: none;
@@ -204,9 +207,19 @@ body .grid-hovedlayout main #grid-forside #nyheter {
 }
 body .grid-hovedlayout main #grid-forside #nyheter article {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body .grid-hovedlayout main #grid-forside #nyheter article img {
   width: 100%;
+}
+body .grid-hovedlayout main #grid-forside #nyheter article h2 {
+  margin: 0.4rem 0 0.3rem 0.3rem;
+}
+body .grid-hovedlayout main #grid-forside #nyheter article h2 a {
+  text-decoration: none;
+  color: #000;
 }
 body .grid-hovedlayout main #grid-forside #kategorier {
   /*grid-area: kategorier;*/
@@ -218,9 +231,19 @@ body .grid-hovedlayout main #grid-forside #kategorier {
 }
 body .grid-hovedlayout main #grid-forside #kategorier article {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body .grid-hovedlayout main #grid-forside #kategorier article img {
   width: 100%;
+}
+body .grid-hovedlayout main #grid-forside #kategorier article h2 {
+  margin: 0.4rem 0 0.3rem 0.3rem;
+}
+body .grid-hovedlayout main #grid-forside #kategorier article h2 a {
+  text-decoration: none;
+  color: #000;
 }
 @media only screen and (min-width: 700px) {
   body .grid-hovedlayout main #grid-forside {
@@ -240,14 +263,6 @@ body .grid-hovedlayout main #grid-forside #kategorier article img {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-    display: flex;
-  }
-  body .grid-hovedlayout main #grid-forside #produkt article {
-    padding: 1rem;
-    width: 50%;
-  }
-  body .grid-hovedlayout main #grid-forside #produkt article img {
-    width: 100%;
   }
   body .grid-hovedlayout main #grid-forside #nyheter {
     grid-column-start: 1;
@@ -264,6 +279,19 @@ body .grid-hovedlayout main #grid-forside #kategorier article img {
 }
 body .grid-hovedlayout footer {
   grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .grid-hovedlayout footer ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  width: 30%;
+  justify-content: space-between;
+}
+body .grid-hovedlayout footer ul li {
+  list-style: none;
 }
 @media only screen and (min-width: 700px) {
   body .grid-hovedlayout {
@@ -288,6 +316,9 @@ body .grid-hovedlayout footer {
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
+  }
+  body .grid-hovedlayout footer ul {
+    width: 12%;
   }
 }
 body #grid-kategori-layout {
@@ -636,6 +667,7 @@ body #grid-produkt-layout footer {
 .bildekilde {
   margin: 0;
   font-size: 0.6rem;
+  align-self: self-start;
 }
 .bildekilde a {
   text-decoration: none;

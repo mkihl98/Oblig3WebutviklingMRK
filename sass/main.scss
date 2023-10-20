@@ -210,13 +210,16 @@ body{
                     article{
                         padding: 1rem;
                         width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
 
                         img{
                             width: 100%;
                         }
 
                         h2{
-                            margin: 0.5rem 0 0.3rem 0.3rem;
+                            margin: 0 0 0.3rem 0.3rem;
     
                             a{
                                 text-decoration: none;
@@ -239,9 +242,21 @@ body{
 
                     article{
                         padding: 1rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
 
                         img{
                             width: 100%;
+                        }
+
+                        h2{
+                            margin: 0.4rem 0 0.3rem 0.3rem;
+    
+                            a{
+                                text-decoration: none;
+                                color: #000;
+                            }
                         }
                     }
                 }
@@ -256,9 +271,21 @@ body{
 
                     article{
                         padding: 1rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
 
                         img{
                             width: 100%;
+                        }
+
+                        h2{
+                            margin: 0.4rem 0 0.3rem 0.3rem;
+    
+                            a{
+                                text-decoration: none;
+                                color: #000;
+                            }
                         }
                     }
                 }
@@ -285,16 +312,6 @@ body{
                         grid-column-end: 3;
                         grid-row-start: 1;
                         grid-row-end: 3;
-                        display: flex;
-
-                        article{
-                            padding: 1rem;
-                            width: 50%;
-        
-                            img{
-                                width: 100%;
-                            }
-                        }
                     }
 
                     #nyheter{
@@ -316,6 +333,21 @@ body{
 
         footer{
             grid-area: footer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            ul{
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+                width: 30%;
+                justify-content: space-between;
+
+                li{
+                    list-style: none;
+                }
+            }
         }
     }
 
@@ -345,6 +377,10 @@ body{
                 grid-column-end: 4;
                 grid-row-start: 3;
                 grid-row-end: 4;
+
+                ul{
+                    width: 12%;
+                }
             }
         }
     }
@@ -800,6 +836,7 @@ body{
 .bildekilde{
     margin: 0;
     font-size: 0.6rem;
+    align-self: self-start;
     a{
         text-decoration: none;
         color: #000;
