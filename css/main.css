@@ -288,10 +288,18 @@ body .grid-hovedlayout footer ul {
   flex-direction: row;
   padding: 0;
   width: 30%;
-  justify-content: space-between;
+  justify-content: center;
 }
 body .grid-hovedlayout footer ul li {
   list-style: none;
+}
+body .grid-hovedlayout footer ul li a {
+  list-style: none;
+  color: #000;
+  padding: 0.5rem;
+}
+body .grid-hovedlayout footer ul #instagram {
+  padding: 0 1.7rem;
 }
 @media only screen and (min-width: 700px) {
   body .grid-hovedlayout {
@@ -316,9 +324,6 @@ body .grid-hovedlayout footer ul li {
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
-  }
-  body .grid-hovedlayout footer ul {
-    width: 12%;
   }
 }
 body #grid-kategori-layout {

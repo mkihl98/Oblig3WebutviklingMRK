@@ -342,10 +342,20 @@ body{
                 flex-direction: row;
                 padding: 0;
                 width: 30%;
-                justify-content: space-between;
+                justify-content: center;
 
                 li{
                     list-style: none;
+
+                    a{
+                        list-style: none;
+                        color: #000;
+                        padding: 0.5rem;
+                    }
+                }
+
+                #instagram{
+                    padding: 0 1.7rem;
                 }
             }
         }
@@ -377,10 +387,6 @@ body{
                 grid-column-end: 4;
                 grid-row-start: 3;
                 grid-row-end: 4;
-
-                ul{
-                    width: 12%;
-                }
             }
         }
     }
