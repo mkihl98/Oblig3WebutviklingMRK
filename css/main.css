@@ -124,6 +124,32 @@
   }
 }
 
+/*Oppsett for footer, som jeg gjenbruker på alle sidene. Den er utviklet for mobil, men med flex slik at den tilpasser seg skjermstørrelsen når skjermen blir større:*/
+.footer-oppsett, body #grid-produkt-layout footer, body #grid-kategori-layout footer, body .grid-hovedlayout footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+.footer-oppsett ul, body #grid-produkt-layout footer ul, body #grid-kategori-layout footer ul, body .grid-hovedlayout footer ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  width: 30%;
+  justify-content: center;
+}
+.footer-oppsett ul li, body #grid-produkt-layout footer ul li, body #grid-kategori-layout footer ul li, body .grid-hovedlayout footer ul li {
+  list-style: none;
+}
+.footer-oppsett ul li a, body #grid-produkt-layout footer ul li a, body #grid-kategori-layout footer ul li a, body .grid-hovedlayout footer ul li a {
+  list-style: none;
+  color: #000;
+  padding: 0.5rem;
+}
+.footer-oppsett ul #instagram, body #grid-produkt-layout footer ul #instagram, body #grid-kategori-layout footer ul #instagram, body .grid-hovedlayout footer ul #instagram {
+  padding: 0 1.7rem;
+}
+
 body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
@@ -279,27 +305,6 @@ body .grid-hovedlayout main #grid-forside #kategorier article h2 a {
 }
 body .grid-hovedlayout footer {
   grid-area: footer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-body .grid-hovedlayout footer ul {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  width: 30%;
-  justify-content: center;
-}
-body .grid-hovedlayout footer ul li {
-  list-style: none;
-}
-body .grid-hovedlayout footer ul li a {
-  list-style: none;
-  color: #000;
-  padding: 0.5rem;
-}
-body .grid-hovedlayout footer ul #instagram {
-  padding: 0 1.7rem;
 }
 @media only screen and (min-width: 700px) {
   body .grid-hovedlayout {
