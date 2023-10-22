@@ -482,6 +482,7 @@ body #grid-produkt-layout main #produkt-info p {
   width: 100%;
 }
 body #grid-produkt-layout main #produkt-info .text-right {
+  display: flex;
   width: 50%;
   margin: 0;
   font-size: 2rem;
@@ -491,16 +492,16 @@ body #grid-produkt-layout main #produkt-info #pris {
   justify-content: end;
 }
 body #grid-produkt-layout main #produkt-info form {
-  margin: 3rem 0 1rem 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: 3rem 0 1rem 0;
+  width: 100%;
 }
 body #grid-produkt-layout main #produkt-info form label {
   font-size: 1.5rem;
   align-self: center;
 }
-body #grid-produkt-layout main #produkt-info form select { /*På utformingen av select har jeg tatt utgangspunkt i hva Ann-Charlott gjorde på sitt select-felt i index.html i HTML-skjema i github-repository for Webutvikling:*/
+body #grid-produkt-layout main #produkt-info form select { /*På utformingen av select har jeg tatt utgangspunkt i hva Ann-Charlott gjorde på sitt select-felt i index.html i mappen "HTML-skjema" i github-repository for Webutvikling:*/
   flex-basis: 60%;
   border-radius: 6px;
   border: 0.4px solid #000;
@@ -528,6 +529,9 @@ body #grid-produkt-layout main #produkt-info #praktisk-info .frakt-retur {
 body #grid-produkt-layout main #produkt-detaljer {
   margin: 1rem 0 0 0;
   padding: 0 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 body #grid-produkt-layout main #produkt-detaljer article {
   display: flex;
@@ -599,7 +603,6 @@ body #grid-produkt-layout footer {
     margin: 0;
   }
   body #grid-produkt-layout main #produkt-info .text-right {
-    display: flex;
     justify-content: end;
     width: 100%;
     font-size: 3.5rem;
@@ -623,9 +626,6 @@ body #grid-produkt-layout footer {
   }
   body #grid-produkt-layout main #produkt-detaljer {
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   body #grid-produkt-layout main #kundevurderinger {
     width: 48%;
