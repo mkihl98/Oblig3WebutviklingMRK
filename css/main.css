@@ -175,13 +175,8 @@ body .grid-hovedlayout main #grid-forside {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
-  /*grid-template-areas: "video"
-                      "produkter"
-                      "nyheter"
-                      "kategorier";*/
 }
 body .grid-hovedlayout main #grid-forside #videosnutt {
-  /*grid-area: video;*/
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -197,7 +192,6 @@ body .grid-hovedlayout main #grid-forside #videosnutt article #video {
   max-width: 800px;
 }
 body .grid-hovedlayout main #grid-forside #produkt {
-  /*grid-area: produkter;*/
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
@@ -225,7 +219,6 @@ body .grid-hovedlayout main #grid-forside #produkt article p {
   margin: 0 0 0.5rem 0.3rem;
 }
 body .grid-hovedlayout main #grid-forside #nyheter {
-  /*grid-area: nyheter;*/
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -248,7 +241,6 @@ body .grid-hovedlayout main #grid-forside #nyheter article h2 a {
   color: #000;
 }
 body .grid-hovedlayout main #grid-forside #kategorier {
-  /*grid-area: kategorier;*/
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 4;
@@ -340,13 +332,6 @@ body #grid-kategori-layout {
 body #grid-kategori-layout main {
   grid-area: main;
 }
-body #grid-kategori-layout main .breadcrumb p {
-  margin: 0.2rem 0.4rem;
-}
-body #grid-kategori-layout main .breadcrumb a {
-  text-decoration: none;
-  color: #000;
-}
 body #grid-kategori-layout main section {
   display: flex;
   width: 100%;
@@ -385,13 +370,35 @@ body #grid-kategori-layout aside .fa-arrow-down-wide-short {
 }
 body #grid-kategori-layout aside #filter-section {
   display: none;
+  flex-direction: column;
+  margin: 4rem 0 0 0;
+}
+body #grid-kategori-layout aside #filter-section h3 {
+  padding: 0 0 0 1rem;
+  font-size: 2rem;
+}
+body #grid-kategori-layout aside #filter-section #first-filter {
+  border-top: 2px solid #000;
+}
+body #grid-kategori-layout aside #filter-section article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body #grid-kategori-layout aside #filter-section article p {
+  padding: 0.5rem 0 1rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+body #grid-kategori-layout aside #filter-section article .fa-plus {
+  padding: 0.1rem 0.5rem 0 0;
 }
 body #grid-kategori-layout footer {
   grid-area: footer;
 }
 @media only screen and (min-width: 800px) {
   body #grid-kategori-layout {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
     margin: 1rem;
@@ -427,29 +434,6 @@ body #grid-kategori-layout footer {
   }
   body #grid-kategori-layout aside #filter-section {
     display: flex;
-    flex-direction: column;
-    margin: 4rem 0 0 0;
-  }
-  body #grid-kategori-layout aside #filter-section h3 {
-    padding: 0 0 0 1rem;
-    font-size: 2rem;
-  }
-  body #grid-kategori-layout aside #filter-section #first-filter {
-    border-top: 2px solid #000;
-  }
-  body #grid-kategori-layout aside #filter-section article {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-  body #grid-kategori-layout aside #filter-section article p {
-    padding: 0.5rem 0 1rem 1rem;
-    font-size: 1.5rem;
-    font-weight: 550;
-  }
-  body #grid-kategori-layout aside #filter-section article .fa-plus {
-    padding: 0.1rem 0.5rem 0 0;
   }
   body #grid-kategori-layout footer {
     grid-column-start: 1;
@@ -467,13 +451,10 @@ body #grid-produkt-layout {
 body #grid-produkt-layout main {
   grid-area: main;
   padding: 0;
-}
-body #grid-produkt-layout main .breadcrumb p {
-  margin: 0.2rem 0.4rem;
-}
-body #grid-produkt-layout main .breadcrumb a {
-  text-decoration: none;
-  color: #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 body #grid-produkt-layout main #produktbilde article img {
   width: 100%;
@@ -483,6 +464,10 @@ body #grid-produkt-layout main #minibilder {
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 0 0 0;
+}
+body #grid-produkt-layout main #minibilder article {
+  display: flex;
+  justify-content: space-between;
 }
 body #grid-produkt-layout main #minibilder article img {
   width: 100%;
@@ -592,10 +577,6 @@ body #grid-produkt-layout footer {
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 4;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
   body #grid-produkt-layout main #produktbilde {
     width: 50%;
@@ -604,12 +585,9 @@ body #grid-produkt-layout footer {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 0 0 1rem;
-    max-width: 270px;
     width: 20%;
   }
   body #grid-produkt-layout main #minibilder article {
-    display: flex;
-    justify-content: space-between;
     width: 50%;
     padding: 0 1rem 0 0;
   }
@@ -671,6 +649,13 @@ body #grid-produkt-layout footer {
   flex-basis: 100%;
   align-items: baseline;
   padding: 0 0 1rem 0.5rem;
+}
+.smulesti p, body #grid-kategori-layout main .breadcrumb p, body #grid-produkt-layout main .breadcrumb p {
+  margin: 0.2rem 0.4rem;
+}
+.smulesti a, body #grid-kategori-layout main .breadcrumb a, body #grid-produkt-layout main .breadcrumb a {
+  text-decoration: none;
+  color: #000;
 }
 
 /*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/

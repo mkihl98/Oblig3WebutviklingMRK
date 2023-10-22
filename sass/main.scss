@@ -205,13 +205,8 @@ body{
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(4, auto);
-                /*grid-template-areas: "video"
-                                    "produkter"
-                                    "nyheter"
-                                    "kategorier";*/
 
                 #videosnutt{
-                    /*grid-area: video;*/
                     grid-column-start: 1;
                     grid-column-end: 2;
                     grid-row-start: 1;
@@ -230,7 +225,6 @@ body{
                 }
 
                 #produkt{
-                    /*grid-area: produkter;*/
                     grid-column-start: 1;
                     grid-column-end: 2;
                     grid-row-start: 2;
@@ -264,7 +258,6 @@ body{
                 }
 
                 #nyheter{
-                    /*grid-area: nyheter;*/
                     grid-column-start: 1;
                     grid-column-end: 2;
                     grid-row-start: 3;
@@ -292,7 +285,6 @@ body{
                 }
 
                 #kategorier{
-                    /*grid-area: kategorier;*/
                     grid-column-start: 1;
                     grid-column-end: 2;
                     grid-row-start: 4;
@@ -414,15 +406,6 @@ body{
 
             .breadcrumb{
                 @extend .smulesti;
-
-                p{
-                    margin: 0.2rem 0.4rem;
-                }
-
-                a{
-                    text-decoration: none;
-                    color: #000;
-                }
             }
 
             section{
@@ -472,6 +455,34 @@ body{
 
             #filter-section{
                 display: none;
+                flex-direction: column;
+                margin: 4rem 0 0 0;
+
+                h3{
+                    padding: 0 0 0 1rem;
+                    font-size: 2rem;
+                }
+
+                #first-filter{
+                    border-top: 2px solid #000;
+                }
+
+                article{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: baseline;
+
+                    p{
+                        padding: 0.5rem 0 1rem 1rem;
+                        font-size: 1.5rem;
+                        font-weight: 550;
+                    }
+
+                    .fa-plus{
+                        padding: 0.1rem 0.5rem 0 0;
+                    }
+                }
             }
         }
 
@@ -484,7 +495,6 @@ body{
 /*Kategoriside desktop: Grid til hovedkomponentene (header, aside, main og footer) når skjermen blir større:*/
     @media only screen and (min-width: 800px) {
         #grid-kategori-layout{
-            display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, auto);
             margin: 1rem;
@@ -527,34 +537,6 @@ body{
 
                 #filter-section{
                     display: flex;
-                    flex-direction: column;
-                    margin: 4rem 0 0 0;
-
-                    h3{
-                        padding: 0 0 0 1rem;
-                        font-size: 2rem;
-                    }
-
-                    #first-filter{
-                        border-top: 2px solid #000;
-                    }
-
-                    article{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        align-items: baseline;
-
-                        p{
-                            padding: 0.5rem 0 1rem 1rem;
-                            font-size: 1.5rem;
-                            font-weight: 550;
-                        }
-
-                        .fa-plus{
-                            padding: 0.1rem 0.5rem 0 0;
-                        }
-                    }
                 }
             }
 
@@ -581,18 +563,13 @@ body{
         main{
             grid-area: main;
             padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
             .breadcrumb{
                 @extend .smulesti;
-
-                p{
-                    margin: 0.2rem 0.4rem;
-                }
-
-                a{
-                    text-decoration: none;
-                    color: #000;
-                }
             }
 
             #produktbilde{
@@ -610,6 +587,9 @@ body{
                 padding: 0.5rem 0 0 0;
 
                 article{
+                    display: flex;
+                    justify-content: space-between;
+
                     img{
                         width: 100%;
                         padding: 0 1rem 0 0;
@@ -747,10 +727,6 @@ body{
                 grid-column-end: 5;
                 grid-row-start: 2;
                 grid-row-end: 4;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
 
                 #produktbilde{
                     width: 50%;
@@ -760,12 +736,9 @@ body{
                     flex-direction: row;
                     flex-wrap: wrap;
                     padding: 0 0 0 1rem;
-                    max-width: 270px;
                     width: 20%;
 
                     article{
-                        display: flex;
-                        justify-content: space-between;
                         width: 50%;
                         padding: 0 1rem 0 0;
 
@@ -844,6 +817,15 @@ body{
     flex-basis: 100%;
     align-items: baseline;
     padding: 0 0 1rem 0.5rem;
+
+    p{
+        margin: 0.2rem 0.4rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 /*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/
