@@ -151,11 +151,18 @@
   list-style: none;
   color: #000;
   padding: 0.5rem;
+  /*Jeg fant tips til hvordan man kan gjøre fontawesome-ikoner større når man hovrer over dem,
+  og brukte den første foreslåtte løsningen fra denne siden: https://stackoverflow.com/questions/35566603/make-font-awesome-icon-size-increase-on-mouseover*/
+}
+.footer-oppsett ul li a .fa-brands:hover, body #grid-produkt-layout footer ul li a .fa-brands:hover, body #grid-kategori-layout footer ul li a .fa-brands:hover, body .grid-hovedlayout footer ul li a .fa-brands:hover {
+  font-size: 3.5rem;
+  transition: 0.5s ease-out;
 }
 .footer-oppsett ul #instagram, body #grid-produkt-layout footer ul #instagram, body #grid-kategori-layout footer ul #instagram, body .grid-hovedlayout footer ul #instagram {
   padding: 0 1.7rem;
 }
 
+/*Oppsett inne i body for sidene starter her. Har brukt @extend for å legge inn header-oppsett og footer-oppsett på hver av sidene, for å unngå å skrive samme kode tre ganger.*/
 body {
   background-color: #eae6e6;
   font-family: Arial, Helvetica, sans-serif;
@@ -174,7 +181,10 @@ body .grid-hovedlayout {
 }
 body .grid-hovedlayout main {
   grid-area: main;
-  /*Forside mobil: Grid til hovedkomponentene inne i main (fire forskjellige <section> med hver sin #id):*/
+  /*Forside mobil: Grid til hovedkomponentene inne i main (fire forskjellige <section> med hver sin #id).
+  Jeg ville bruke grid på denne måten for å få testet ut grid litt mer, og siden det virket ut som en god løsning
+  for å få nettsiden til å utforme seg på den måten jeg har designet i wireframes. Ann-Charlott sa også at det gikk
+  fint å bruke to grids på én side, så lenge jeg holder god kontroll over de:*/
   /*Forside desktop: Grid til hovedkomponentene inne i main (fire forskjellige <section> med hver sin #id):*/
 }
 body .grid-hovedlayout main #grid-forside {
@@ -220,6 +230,9 @@ body .grid-hovedlayout main #grid-forside #produkt article h2 a {
   text-decoration: none;
   color: #000;
 }
+body .grid-hovedlayout main #grid-forside #produkt article h2 a:hover {
+  text-decoration: underline;
+}
 body .grid-hovedlayout main #grid-forside #produkt article p {
   margin: 0 0 0.5rem 0.3rem;
 }
@@ -245,6 +258,9 @@ body .grid-hovedlayout main #grid-forside #nyheter article h2 a {
   text-decoration: none;
   color: #000;
 }
+body .grid-hovedlayout main #grid-forside #nyheter article h2 a:hover {
+  text-decoration: underline;
+}
 body .grid-hovedlayout main #grid-forside #kategorier {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -267,6 +283,9 @@ body .grid-hovedlayout main #grid-forside #kategorier article h2 {
 body .grid-hovedlayout main #grid-forside #kategorier article h2 a {
   text-decoration: none;
   color: #000;
+}
+body .grid-hovedlayout main #grid-forside #kategorier article h2 a:hover {
+  text-decoration: underline;
 }
 @media only screen and (min-width: 700px) {
   body .grid-hovedlayout main #grid-forside {
@@ -361,12 +380,17 @@ body #grid-kategori-layout main section article h2 a {
   text-decoration: none;
   color: #000;
 }
+body #grid-kategori-layout main section article h2 a:hover {
+  text-decoration: underline;
+}
 body #grid-kategori-layout main section article p {
   margin: 0 0 0 0.3rem;
 }
 body #grid-kategori-layout aside {
   grid-area: aside;
   padding: 1rem 1rem 0 1rem;
+  /*Filter-seksjonen er usynlig på mobilversjon. Ideen er at denne skulle ha dukket opp når man trykker på filter-ikonet (.fa-arrow-down-wide-short) på mobilversjonen, 
+  mens hele seksjonen synes når man er på desktop. Jeg har ikke lagt på javascript for å gjøre filter-ikonet klikkbart, ettersom dette ikke var nødvendig for å svare på oppgaven.*/
 }
 body #grid-kategori-layout aside .fa-arrow-down-wide-short {
   display: flex;
@@ -662,6 +686,9 @@ body #grid-produkt-layout footer {
   text-decoration: none;
   color: #000;
 }
+.smulesti a:hover, body #grid-kategori-layout main .breadcrumb a:hover, body #grid-produkt-layout main .breadcrumb a:hover {
+  text-decoration: underline;
+}
 
 /*Felles design for alle bildetekstene (kildene til de forskjellige bildene jeg har brukt fra Pixabay) på alle sidene:*/
 .bildekilde {
@@ -672,6 +699,9 @@ body #grid-produkt-layout footer {
 .bildekilde a {
   text-decoration: none;
   color: #000;
+}
+.bildekilde a:hover {
+  text-decoration: underline;
 }
 
 /*Fargejustering på alle ikonene fra fontawesome.com*/
@@ -686,4 +716,4 @@ body #grid-produkt-layout footer {
 /*Kilde for oppsett av rette linjer i CSS: https://www.shecodes.io/athena/5273-create-straight-and-horizontal-lines-with-css*/
 .linje {
   border-bottom: 2px solid #000;
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=style.css.map */
